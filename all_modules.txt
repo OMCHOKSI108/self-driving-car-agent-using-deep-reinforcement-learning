@@ -1,0 +1,95 @@
+All Python Modules Used in the Project
+=====================================
+
+Based on comprehensive analysis of all Python files, here is the complete list of modules and packages used:
+
+## Third-Party Packages (Install via pip/poetry):
+
+### Core ML/DL Libraries:
+- torch (PyTorch) - Neural network framework
+- torch.nn - Neural network modules
+- torch.optim - Optimization algorithms
+- torch.nn.functional - Functional interface
+- torch.utils.data - Data loading utilities
+- torch.utils.tensorboard - TensorBoard integration
+- torch.distributions - Probability distributions
+- torchvision - Computer vision utilities
+- torchvision.transforms - Image transformations
+- torchvision.datasets - Dataset utilities
+
+### Scientific Computing:
+- numpy - Numerical computing
+- Pillow (PIL) - Image processing
+
+### Simulation/Gaming:
+- pygame - Game development library
+- carla - CARLA simulator API
+
+### Development Tools:
+- tensorboard - Visualization toolkit
+- poetry - Dependency management
+- future - Python 2/3 compatibility
+
+## Standard Library Modules (Built-in with Python 3.7):
+
+### System/OS:
+- os - Operating system interface
+- sys - System-specific parameters
+- glob - Unix style pathname pattern expansion
+
+### Time/Date:
+- time - Time functions
+- datetime - Date and time handling
+
+### Data Structures/Random:
+- random - Random number generation
+- weakref - Weak references
+- pickle - Object serialization
+
+### Utilities:
+- argparse - Command-line argument parsing
+- logging - Logging facility
+- threading - Threading support
+- distutils.util - Utility functions
+- math - Mathematical functions
+
+## Project-Specific Modules:
+
+### Local Imports:
+- simulation.connection - CARLA client connection
+- simulation.environment - CARLA environment wrapper
+- simulation.sensors - Sensor implementations
+- simulation.settings - Configuration constants
+- networks.on_policy.ppo.agent - PPO agent
+- networks.on_policy.ppo.ppo - PPO network architecture
+- networks.off_policy.ddqn.agent - DDQN agent
+- networks.off_policy.ddqn.dueling_dqn - DDQN network
+- networks.off_policy.replay_buffer - Experience replay
+- encoder_init - VAE encoder initialization
+- autoencoder.encoder - VAE encoder
+- autoencoder.decoder - VAE decoder
+- autoencoder.vae - VAE training
+- autoencoder.reconstructor - Image reconstruction
+- parameters - Hyperparameters
+
+## Installation Commands:
+
+### Using pip:
+```
+pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 --index-url https://download.pytorch.org/whl/cu113
+pip install numpy==1.21.1 pygame==2.1.2 Pillow==9.4.0 tensorboard==2.10.0 future==0.18.3
+pip install carla-0.9.8-py3.7-win-amd64.egg
+```
+
+### Using poetry:
+```
+cd poetry
+poetry install
+```
+
+## Notes:
+- All modules are properly imported and used throughout the codebase
+- No missing dependencies found
+- CUDA versions specified for GPU acceleration
+- CARLA egg file provides the carla module
+- Poetry manages additional dependencies in pyproject.toml

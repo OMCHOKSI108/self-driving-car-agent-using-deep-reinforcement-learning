@@ -1,0 +1,72 @@
+Recommended Python, CARLA, and Environment Versions
+====================================================
+
+Based on analysis of the project code, dependencies, and CARLA egg file, here are the recommended versions:
+
+## Python Version
+- **Recommended**: Python 3.7.x (64-bit)
+- **Reason**: The project uses Python ^3.7 in pyproject.toml, and CARLA 0.9.8 egg is compiled for Python 3.7
+- **Compatibility**: Do not use Python 3.8+ as CARLA 0.9.8 does not support newer versions
+
+## CARLA Version
+- **Required**: CARLA 0.9.8 (Windows 64-bit)
+- **Reason**: Project includes carla-0.9.8-py3.7-win-amd64.egg
+- **Additional Maps**: Download CARLA 0.9.8 + Additional Maps for Town02 and Town07 support
+- **Note**: Newer CARLA versions (0.9.10+) may not be compatible without code modifications
+
+## Operating System
+- **Primary**: Windows 10/11 (64-bit)
+- **Alternative**: Linux (Ubuntu recommended)
+- **Reason**: CARLA officially supports Windows/Linux, project developed on Windows
+
+## Hardware Requirements
+
+### Minimum (Inference Only):
+- CPU: Intel i5 or equivalent
+- RAM: 8GB
+- GPU: NVIDIA GTX 1050 or equivalent (for CARLA rendering)
+- Storage: 20GB free space
+
+### Recommended (Training):
+- CPU: Intel i7/i9 or equivalent
+- RAM: 16GB+
+- GPU: NVIDIA RTX 2060 or better (CUDA-compatible)
+- Storage: 50GB+ free space
+
+## CUDA/GPU Setup
+- **CUDA Version**: 11.3 (matches torch wheel)
+- **PyTorch**: torch-1.12.0+cu113
+- **TorchVision**: torchvision-0.13.0+cu113
+- **GPU Memory**: 4GB+ VRAM recommended for training
+
+## Environment Setup Steps
+
+1. Install Python 3.7.x (64-bit) from python.org
+2. Install CARLA 0.9.8 server + Additional Maps
+3. Create virtual environment: `python -m venv venv`
+4. Activate: `venv\Scripts\activate` (Windows)
+5. Install dependencies: `pip install -r requirements.txt`
+6. Install CARLA egg: `pip install carla-0.9.8-py3.7-win-amd64.egg`
+7. Run Poetry install: `cd poetry && poetry install`
+
+## All Required Python Modules
+
+### Core Dependencies:
+- torch==1.12.0+cu113
+- torchvision==0.13.0+cu113
+- numpy==1.21.1
+- pygame==2.1.2
+- Pillow==9.4.0
+- tensorboard==2.10.0
+- carla==0.9.8
+
+### Standard Library (Included with Python 3.7):
+- os, sys, time, random, math, weakref, glob
+- argparse, logging, pickle, threading, datetime
+- distutils.util
+
+### Additional Notes:
+- Poetry is used for additional dependency management
+- CUDA 11.3 required for GPU acceleration
+- Virtual environment strongly recommended
+- CARLA server must be running before starting client scripts
